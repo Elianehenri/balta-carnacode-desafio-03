@@ -10,7 +10,7 @@
     justify-content: center;
     width: 180px;
     height: 180px;
-    background-color: var(--cor-body);
+    background-color: var(--cor-gray03);
     padding: 40px;
     border: 6px solid var(--cor-button);
     border-radius: 45px;

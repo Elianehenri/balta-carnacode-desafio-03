@@ -16,8 +16,8 @@
             <InputNumber id="input-peso" class="input-text input-spacing" @bind-Value="@_model.Peso" placeholder="Peso (kg)" />
             <ValidationMessage For="@(() => _model.Peso)" />
 
-            <InputSelect id="input-sexo" class="input-text input-spacing" @bind-Value="@_model.Sexo" placeholder="Sexo">
-	            <option selected disabled value="">
+            <InputSelect  id="input-sexo" class="input-text input-spacing" @bind-Value="@_model.Sexo" placeholder="Sexo">
+	            <option  selected disabled value="">
                     (Escolha uma opção ...)
 	            </option>
                 <option checked="@(_model.Sexo == "Masculino")" value="Masculino">
