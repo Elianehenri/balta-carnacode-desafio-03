@@ -1,3 +1,4 @@
+
 html, body {
     font-family: var(--font-primaria);
     font-size: 1rem;
@@ -22,29 +23,29 @@ html, body {
     text-align: center; /* Centraliza o texto */
     background-color: var(--cor-fundo);
     width: 37.5rem;
-    border-radius: 1rem;
+    border-radius: 1rem; 
 }
 
 /* Estilos para os botões */
 .btn1, .btn2 {
     font-weight: bold;
-    border-radius: 1.25rem;
-    padding: 0.625rem 1.25rem;
+    border-radius: 1.25rem; 
+    padding: 0.625rem 1.25rem; 
     cursor: pointer;
-    margin-top: 0.9375rem;
+    margin-top: 0.9375rem; 
     box-sizing: border-box;
     text-align: center;
 }
 
 .btn1 {
     background-color: #45fefe;
-    border: 0.125rem solid #45fefe;
+    border: 0.125rem solid #45fefe; 
     color: #000;
 }
 
 .btn2 {
     background-color: #fff;
-    border: 0.125rem solid #45fefe;
+    border: 0.125rem solid #45fefe; 
     color: #000;
 }
 
@@ -64,10 +65,10 @@ html, body {
 .input-text {
     color: #666666;
     background-color: var(--cor-gray03);
-    border: 0.125rem solid #ccc;
-    padding: 0.625rem;
-    border-radius: 0.9375rem;
-    margin-bottom: 0.9375rem;
+    border: 0.125rem solid #ccc;  
+    padding: 0.625rem;  
+    border-radius: 0.9375rem;  
+    margin-bottom: 0.9375rem;  
     width: 100%;
     box-sizing: border-box;
 }
@@ -92,7 +93,7 @@ a, .btn-link {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 .content {
