@@ -12,7 +12,7 @@ public enum BMISituationEnum
     AbaixoDoPeso,
 
     [Description("Peso normal")]
-    PesoNormal,
+    PesoNormal ,
 
     [Description("Acima do peso")]
     AcimaDoPeso,

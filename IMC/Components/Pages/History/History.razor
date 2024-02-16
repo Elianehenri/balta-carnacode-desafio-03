@@ -1,5 +1,6 @@
 ﻿@page "/history"
 
+
 <div class="container">
     <div class="imagem">
         <div class="logo">
@@ -9,26 +10,36 @@
     <h1 class="titulo">Histórico</h1>
     <div class="history">
         <input id="pesquisa-historico" type="text" class="input-text-history" placeholder="Pesquisar..." @bind="_textoPesquisa" @bind:after="Pesquisar">
-        @foreach (var registro in _bmiHistory)
+
+        @if (_bmiHistory.Any())
         {
-            <div class="card">
-                <div class="card-history-content">
-                    <div class="card-history-head">
-                        <div class="card-history">
-                            <div class="history-log"></div>
-                          
+            @foreach (var registro in _bmiHistory)
+            {
+                <div class="card">
+                    <div class="card-history-content">
+                        <div class="card-history-head">
+                            <div class="card-history">
+                                <div class="history-log"></div>
+                            </div>
+                            <div class="title">@registro.Titulo <span class=@registro.CssIcone></span></div>
+                            <div class="time-history">@registro.TextoDataHora</div>
                         </div>
-                        <div class="title">@registro.Titulo <span class=@registro.CssIcone></span></div>
-                        <div class="time-history">@registro.TextoDataHora</div>
-                    </div>
-                    <div class="text-history">
-                        <p>@registro.Texto</p>
+                        <div class="text-history">
+                            <p>@registro.Texto</p>
+                        </div>
                     </div>
                 </div>
+            }
+        }
+        else
+        {
+            <div class="no-info-message">
+                Nenhum registro encontrado!
             </div>
         }
     </div>
 </div>
+
 
 
 @code {
@@ -70,7 +81,7 @@
         {
             { BMISituationEnum.MuitoAbaixoDoPeso, "Você precisa se cuidar, está muito abaixo do peso!" },
             { BMISituationEnum.AbaixoDoPeso, "Estamos quase lá! Tente comer mais vezes ao longo do dia!" },
-            { BMISituationEnum.PesoNormal, "Parabéns, você está no seu peso ideal, continue mantendo este estilo!" },
+            { BMISituationEnum.PesoNormal , "Parabéns, você está no seu peso ideal, continue mantendo este estilo!" },
             { BMISituationEnum.AcimaDoPeso, "Estamos quase lá! Faça alguns ajustes para ficar no peso ideal!" },
             { BMISituationEnum.ObesidadeI, "Atenção você está muito acima do peso!" },
             { BMISituationEnum.ObesidadeII, "Cuiddo redobrado! Você está muito acima do peso!" },
