@@ -378,25 +378,40 @@ pageTitle[b-3pwsxuom50] {
 	color: red;
 }
 /* /Components/Splash.razor.rz.scp.css */
-
-
 .splash-container[b-kaaxw7r1pj] {
-    text-align: center;
-   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .splash-border[b-kaaxw7r1pj] {
-    display: flex;
-    justify-content: center;
-    width: 180px;
-    height: 180px;
-    background-color: var(--cor-gray03);
-    padding: 40px;
-    border: 6px solid var(--cor-button);
-    border-radius: 45px;
+    background-color: var(--cor-gray03); 
+    padding: 20px; 
+    border: 6px solid var(--cor-body); 
+    border-radius: 45px; 
 }
 
 .splash-image[b-kaaxw7r1pj] {
+    width: 100px; 
+    height: auto;
     border-radius: 10px;
-    width: 100%;
+    border: 6px solid var(--cor-button);
+    padding: 10px;
 }
+
+.splash[b-kaaxw7r1pj] {
+    text-align: center;
+}
+
+.splash-title[b-kaaxw7r1pj] {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.splash-message[b-kaaxw7r1pj] {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
