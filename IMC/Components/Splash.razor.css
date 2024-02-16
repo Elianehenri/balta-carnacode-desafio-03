@@ -1,22 +1,37 @@
-﻿
-
-.splash-container {
-    text-align: center;
-   
+﻿.splash-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .splash-border {
-    display: flex;
-    justify-content: center;
-    width: 180px;
-    height: 180px;
-    background-color: var(--cor-gray03);
-    padding: 40px;
-    border: 6px solid var(--cor-button);
-    border-radius: 45px;
+    background-color: var(--cor-gray03); 
+    padding: 20px; 
+    border: 6px solid var(--cor-body); 
+    border-radius: 45px; 
 }
 
 .splash-image {
+    width: 100px; 
+    height: auto;
     border-radius: 10px;
-    width: 100%;
+    border: 6px solid var(--cor-button);
+    padding: 10px;
 }
+
+.splash {
+    text-align: center;
+}
+
+.splash-title {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.splash-message {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+

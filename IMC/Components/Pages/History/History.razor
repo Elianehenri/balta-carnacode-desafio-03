@@ -1,5 +1,6 @@
-﻿@page "/history"
-
+﻿
+ @page "/history"
+@inject NavigationManager Navigation
 
 <div class="container">
     <div class="imagem">
@@ -10,7 +11,7 @@
     <h1 class="titulo">Histórico</h1>
     <div class="history">
         <input id="pesquisa-historico" type="text" class="input-text-history" placeholder="Pesquisar..." @bind="_textoPesquisa" @bind:after="Pesquisar">
-
+        <button class="btn2" @onclick="NavigateToCalculation">Voltar ao Cálculo</button>
         @if (_bmiHistory.Any())
         {
             @foreach (var registro in _bmiHistory)
@@ -38,13 +39,12 @@
             </div>
         }
     </div>
+   
 </div>
 
-
-
 @code {
-	private string? _textoPesquisa;
-	private List<RegistroHistoricoViewModel> _historicoCompleto = new();
+    private string? _textoPesquisa;
+    private List<RegistroHistoricoViewModel> _historicoCompleto = new();
     private List<RegistroHistoricoViewModel> _bmiHistory = new();
 
     protected override async Task OnInitializedAsync()
@@ -52,24 +52,29 @@
         var bmis = await BmiService.ListarAsync();
 
         _historicoCompleto = bmis
-	        .OrderByDescending(bmi => bmi.DataCalculo)
-	        .Select(bmi => new RegistroHistoricoViewModel(bmi))
-	        .ToList();
+            .OrderByDescending(bmi => bmi.DataCalculo)
+            .Select(bmi => new RegistroHistoricoViewModel(bmi))
+            .ToList();
         _bmiHistory = _historicoCompleto;
     }
 
     private void Pesquisar()
     {
-	    _bmiHistory = _textoPesquisa == null
-		    ? _historicoCompleto
-		    : _historicoCompleto
-			    .Where(item => item.TextoDataHora
-					    .Contains(_textoPesquisa, StringComparison.InvariantCultureIgnoreCase)
-				    || item.Texto
-					    .Contains(_textoPesquisa, StringComparison.InvariantCultureIgnoreCase)
-				    || item.Titulo
-					    .Contains(_textoPesquisa, StringComparison.InvariantCultureIgnoreCase))
-			    .ToList();
+        _bmiHistory = _textoPesquisa == null
+            ? _historicoCompleto
+            : _historicoCompleto
+                .Where(item => item.TextoDataHora
+                        .Contains(_textoPesquisa, StringComparison.InvariantCultureIgnoreCase)
+                    || item.Texto
+                        .Contains(_textoPesquisa, StringComparison.InvariantCultureIgnoreCase)
+                    || item.Titulo
+                        .Contains(_textoPesquisa, StringComparison.InvariantCultureIgnoreCase))
+                .ToList();
+    }
+
+    private void NavigateToCalculation()
+    {
+        Navigation.NavigateTo("/imc");
     }
 
     public class RegistroHistoricoViewModel
@@ -79,13 +84,13 @@
 
         private static readonly IReadOnlyDictionary<BMISituationEnum, string> Mensagens = new Dictionary<BMISituationEnum, string>
         {
-            { BMISituationEnum.MuitoAbaixoDoPeso, "Você precisa se cuidar, está muito abaixo do peso!" },
-            { BMISituationEnum.AbaixoDoPeso, "Estamos quase lá! Tente comer mais vezes ao longo do dia!" },
-            { BMISituationEnum.PesoNormal , "Parabéns, você está no seu peso ideal, continue mantendo este estilo!" },
-            { BMISituationEnum.AcimaDoPeso, "Estamos quase lá! Faça alguns ajustes para ficar no peso ideal!" },
-            { BMISituationEnum.ObesidadeI, "Atenção você está muito acima do peso!" },
-            { BMISituationEnum.ObesidadeII, "Cuiddo redobrado! Você está muito acima do peso!" },
-            { BMISituationEnum.ObesidadeIII, "Procure um médico. Você está muito acima do peso!" },
+            { BMISituationEnum.MuitoAbaixoDoPeso, "Você precisa se cuidar, está muito abaixo do peso! ⚠" },
+            { BMISituationEnum.AbaixoDoPeso, "Estamos quase lá! Tente comer mais vezes ao longo do dia! ⚠️" },
+            { BMISituationEnum.PesoNormal , "Parabéns, você está no seu peso ideal, continue mantendo este estilo! ✅" },
+            { BMISituationEnum.AcimaDoPeso, "Estamos quase lá! Faça alguns ajustes para ficar no peso ideal! ⚠️" },
+            { BMISituationEnum.ObesidadeI, "Atenção você está muito acima do peso! ⛔" },
+            { BMISituationEnum.ObesidadeII, "Cuiddo redobrado! Você está muito acima do peso! ⛔" },
+            { BMISituationEnum.ObesidadeIII, "Procure um médico. Você está muito acima do peso! ⛔" },
         };
 
         public string Titulo { get; set; }
@@ -112,5 +117,4 @@
             Texto = Mensagens[bmi.Situacao];
         }
     }
-
 }

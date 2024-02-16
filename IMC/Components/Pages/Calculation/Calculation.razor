@@ -1,4 +1,6 @@
-﻿@* @page "/imc"
+﻿
+
+ @page "/imc"
 
 <PageTitle>Calculation</PageTitle>
 
@@ -7,119 +9,8 @@
 <!-- Modal genérico -->
 <div class="modal" id="modal" style="display: @modalDisplay">
     <div class="modal-content">
-        <span class="close" @onclick="CloseModal">&times;</span>
-        <h2>@modalTitle</h2>
-        <p>@modalContent</p>
-    </div>
-</div>
+        <span class="close" @onclick="CloseModalAndNavigate">&times;</span>
 
-<div class="form-container">
-    <EditForm Model="@_model" OnValidSubmit="HandleSubmit">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
-
-        <div class="input-container">
-            <InputNumber id="input-altura" class="input-text input-spacing" @bind-Value="@_model.Altura" placeholder="Altura (cm)ex: 180" />
-            <ValidationMessage For="@(() => _model.Altura)" />
-
-            <InputNumber id="input-peso" class="input-text input-spacing" @bind-Value="@_model.Peso" placeholder="Peso (kg)" />
-            <ValidationMessage For="@(() => _model.Peso)" />
-
-            <InputSelect id="input-sexo" class="input-text input-spacing" @bind-Value="@_model.Sexo" placeholder="Sexo">
-                <option selected disabled value="">
-                    (Escolha uma opção ...)
-                </option>
-                <option checked="@(_model.Sexo == "Masculino")" value="Masculino">
-                    Masculino
-                </option>
-                <option checked="@(_model.Sexo == "Feminino")" value="Feminino">
-                    Feminino
-                </option>
-            </InputSelect>
-            <ValidationMessage For="@(() => _model.Sexo)" />
-        </div>
-
-        <div class="checkbox-container">
-            <div class="mais65anos">
-                <InputCheckbox id="input-mais65anos" class="checkbox" @bind-Value="@_model.Mais65Anos" />
-                <label class="checkbox-65mais" for="input-mais65anos">Eu tenho 65 anos ou mais</label>
-            </div>
-        </div>
-
-        <div class="btn-container">
-            <button type="button" class="btn1" @onclick="HandleSubmit">
-                <span>Calcular meu IMC</span>
-            </button>
-            <button type="button" class="btn1" @onclick="NavigateToHistory">
-                <span>Histórico das medidas</span>
-            </button>
-            <button type="button" class="btn2" @onclick="HandleEntendaClick">
-                <span>Entenda o cálculo</span>
-            </button>
-        </div>
-    </EditForm>
-</div>
-
-@code {
-    private BMIModel _model = new();
-    private string modalTitle = "";
-    private string modalContent = "";
-    private string modalDisplay = "none";
-
-    private async Task CloseModal()
-    {
-        modalDisplay = "none";
-    }
-
-    private async Task ShowModal(string title, string content)
-    {
-        modalTitle = title;
-        modalContent = content;
-        modalDisplay = "block";
-    }
-
-    private async Task HandleSubmit()
-    {
-        // Verificar se os campos obrigatórios estão preenchidos antes de prosseguir
-        if (_model.Altura is null || _model.Peso is null || string.IsNullOrWhiteSpace(_model.Sexo))
-        {
-            await ShowModal("Erro", "Por favor, preencha todos os campos obrigatórios.");
-            return; // Retornar sem prosseguir se houver erro
-        }
-
-        _model.CalcularImc();
-
-        // Mostrar modal com o IMC calculado
-        await ShowModal("Resultado do IMC", $"Seu IMC é: {_model.ImcCalculado:F2}. Situação: {_model.Situacao.GetEnumDescription()}");
-    }
-
-    private async Task HandleEntendaClick()
-    {
-        var mensagem = "O Índice de Massa Corporal (IMC) é uma medida utilizada para avaliar se uma pessoa está no peso ideal, com base na sua altura. " +
-                          "Ele é calculado dividindo o peso (em quilogramas) pela altura ao quadrado (em metros). " +
-                          "O resultado indica se a pessoa está abaixo do peso, com peso normal, acima do peso ou obesa.";
-
-        // Exibir a mensagem no modal
-        await ShowModal("Entenda o cálculo", mensagem);
-    }
-
-    private void NavigateToHistory()
-    {
-        Navigation.NavigateTo("history");
-    }
-}
- *@
-
-        @page "/imc"
-
-<PageTitle>Calculation</PageTitle>
-
-<h1 class="title">Cálculo de IMC</h1>
-
-<!-- Modal genérico -->
-<div class="modal" id="modal" style="display: @modalDisplay">
-    <div class="modal-content">
-        <span class="close" @onclick="CloseModal">&times;</span>
         <h2>@modalTitle</h2>
         <p>@modalContent</p>
     </div>
@@ -164,7 +55,7 @@
             <button type="button" class="btn1" @onclick="HandleSubmit">
                 <span>Calcular meu IMC</span>
             </button>
-            <button type="button" class="btn1" @onclick="NavigateToHistory">
+            <button type="button" class="btn2" @onclick="NavigateToHistory">
                 <span>Histórico Medidas</span>
             </button>
             <button type="button" class="btn2" @onclick="HandleEntendaClick">
@@ -193,6 +84,9 @@
         modalDisplay = "block";
     }
 
+   
+  
+
     private async Task HandleSubmit()
     {
         // Verificar se os campos obrigatórios estão preenchidos antes de prosseguir
@@ -206,7 +100,22 @@
 
         // Mostrar modal com o IMC calculado
         await ShowModal("Resultado do IMC", $"Seu IMC é: {_model.ImcCalculado:F2}. Situação: {_model.Situacao.GetEnumDescription()}");
+
+        // Não navegar para o histórico aqui, aguardar o usuário fechar o modal
+
+        // Salvar os dados no local storage
+        await BmiService.AdicionarAsync(_model);
     }
+
+    private async Task CloseModalAndNavigate()
+    {
+        // Fechar o modal
+        await CloseModal();
+
+        // Navegar para a página de histórico após fechar o modal
+        Navigation.NavigateTo("history");
+    }
+
 
     private async Task HandleEntendaClick()
     {
@@ -223,3 +132,10 @@
         Navigation.NavigateTo("history");
     }
 }
+
+
+
+
+
+
+ 

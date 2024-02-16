@@ -1,16 +1,17 @@
 ﻿
-
-<div class="splash-container" @onclick="AppStart">
+<div class="splash-container">
     <div class="splash-border">
         <div class="splash">
-            <img class="splash-image" src="imgs/icon.png" alt="">
+            <img class="splash-image" src="imgs/icon.png" alt="Logo do seu aplicativo">
+            <h1 class="splash-title">Bem-vindo ao Seu Guia de Bem-Estar Pessoal! </h1>
+            <p class="splash-message">Seu aplicativo para calcular o IMC de forma rápida e precisa.</p>
+            <button class="btn2" @onclick="NavigateToIMC">Calcular IMC</button>
         </div>
-       
     </div>
 </div>
 
 @code {
-    private void AppStart()
+    private void NavigateToIMC()
     {
         Navigation.NavigateTo("imc");
     }
