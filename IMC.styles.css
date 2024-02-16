@@ -183,6 +183,47 @@ pageTitle[b-3pwsxuom50] {
     color: var(--cor-gray03)
 }
 
+
+/* Estilo do modal */
+.modal[b-3pwsxuom50] {
+    display: none;  
+    position: fixed;  
+    z-index: 1;  
+    left: 0;
+    top: 0;
+    width: 100%;  
+    height: 100%;  
+    overflow: auto;  
+    background-color: rgba(0, 0, 0, 0.4);  
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content[b-3pwsxuom50] {
+    background-color: var(--cor-fundo);  
+    margin: auto; 
+    padding: 20px;
+    border: 1px solid #888; 
+    width: 80%;  
+    max-width: 500px;  
+}
+
+/* Estilo do botão de fechar */
+.close[b-3pwsxuom50] {
+    color: #aaa; 
+    float: right;  
+    font-size: 28px;  
+    font-weight: bold;
+}
+
+    .close:hover[b-3pwsxuom50],
+    .close:focus[b-3pwsxuom50] {
+        color: var(--cor-hover);  
+        text-decoration: none;  
+        cursor: pointer;  
+    }
+
+
+
 /* Estilos para o container do formulário */
 .form-container[b-3pwsxuom50] {
     display: flex;
@@ -193,9 +234,11 @@ pageTitle[b-3pwsxuom50] {
     width: 100%;
     margin: 0 auto;
     background: var(--cor-fundo);
-    height: 28.125rem;  
+    height: 31.125rem;  
     border-radius: 0.625rem;  
 }
+
+
 
 .input-container[b-3pwsxuom50] {
     display: flex;
@@ -333,128 +376,6 @@ pageTitle[b-3pwsxuom50] {
 /* Estilos para o ícone vermelho */
 .custom-icon-vermelho[b-iwwvhgqqq5] {
 	color: red;
-}
-/* /Components/Pages/Results/ResultIdealWeight.razor.rz.scp.css */
-
-.card[b-kxvujhoftl] {
-    position: relative;  
-    width: 300px;  
-    background-color: #ffffff;  
-    border-radius: 10px;  
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
-    margin: 20px; 
-    border:none;
-}
-
-.card-body[b-kxvujhoftl] {
-    padding: 20px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;  
-}
-
-
-.container-peso-ideal[b-kxvujhoftl] {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo-imc[b-kxvujhoftl] {
-    margin-bottom: -40px; /* Ajusta a posição da imagem sobreposta */
-    position: relative; /* Define a posição relativa para o container da imagem */
-}
-
-.logo img[b-kxvujhoftl] {
-    width: 89px;  
-    height: 89px;  
-    border: 3px solid #45fefe;  
-    border-radius: 10px;  
-    padding: 10px;  
-    margin-top: 40px; 
-    z-index: 1;  
-    
-}
-
-
-
-.result-page[b-kxvujhoftl] {
-    text-align: center;
-}
-
-.btn-group[b-kxvujhoftl] {
-    margin-top: 20px;  
-    display: flex;  
-    flex-direction: column;  
-    align-items: center;  
-    gap: 5px;  
-}
-
-/* Estilos opcionais para os botões */
-.btn[b-kxvujhoftl] {
-    margin-right: 10px;  
-    background-color: #45fefe;
-}
-
-
-/* /Components/Pages/Results/ResultOverWeight.razor.rz.scp.css */
-.card[b-crpyq17e7r] {
-    position: relative;
-    width: 300px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    border: none;
-}
-
-.card-body[b-crpyq17e7r] {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.container-peso-ideal[b-crpyq17e7r] {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo-imc[b-crpyq17e7r] {
-    margin-bottom: -40px; /* Ajusta a posição da imagem sobreposta */
-    position: relative; /* Define a posição relativa para o container da imagem */
-}
-
-.logo img[b-crpyq17e7r] {
-    width: 89px;
-    height: 89px;
-    border: 3px solid #45fefe;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 40px;
-    z-index: 1;
-}
-
-
-
-.result-page[b-crpyq17e7r] {
-    text-align: center;
-}
-
-.btn-group[b-crpyq17e7r] {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
-/* Estilos opcionais para os botões */
-.btn[b-crpyq17e7r] {
-    margin-right: 10px;
-    background-color: #45fefe;
 }
 /* /Components/Splash.razor.rz.scp.css */
 
