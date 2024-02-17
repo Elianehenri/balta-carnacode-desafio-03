@@ -234,7 +234,7 @@ pageTitle[b-3pwsxuom50] {
     width: 100%;
     margin: 0 auto;
     background: var(--cor-fundo);
-    height: 31.125rem;  
+    height: 27.125rem;  
     border-radius: 0.625rem;  
 }
 
@@ -267,7 +267,7 @@ pageTitle[b-3pwsxuom50] {
 }
 /* /Components/Pages/History/History.razor.rz.scp.css */
 /* Estilos para a imagem */
-.imagem[b-iwwvhgqqq5] {
+/*.imagem {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -275,26 +275,26 @@ pageTitle[b-3pwsxuom50] {
 	border-radius: 0.625rem;
 }
 
-	.imagem .logo img[b-iwwvhgqqq5] {
+	.imagem .logo img {
 		max-width: 100%;
 	}
 
-	.imagem .logo[b-iwwvhgqqq5] {
+	.imagem .logo {
 		width: 30%;
 		border-radius: 0.625rem;
 		border: 0.188rem solid var(--cor-button);
 		margin: 0 auto;
-	}
+	}*/
 
 /* Estilos para o título */
-.titulo[b-iwwvhgqqq5] {
+/*.titulo {
 	font-size: 1.875rem;
 	margin-bottom: 1.25rem;
 	color: var(--cor-gray03);
-}
+}*/
 
 /* Estilos para a caixa de texto de histórico */
-.input-text-history[b-iwwvhgqqq5] {
+/*.input-text-history {
 	width: 100%;
 	height: 2.5rem;
 	border: 0.063rem solid var(--cor-gray02);
@@ -306,77 +306,77 @@ pageTitle[b-3pwsxuom50] {
 	border: 0.125rem solid var(--cor-gray01);
 }
 
-	.input-text-history[b-iwwvhgqqq5]::placeholder {
+	.input-text-history::placeholder {
 		color: var(--cor-gray02);
-	}
+	}*/
 
 /* Estilos para a área de histórico */
-.history[b-iwwvhgqqq5] {
+/*.history {
 	padding: 0.625rem;
-}
+}*/
 
 /* Estilos para cada cartão de histórico */
-.card[b-iwwvhgqqq5] {
+/*.card {
 	display: flex;
 	margin-top: 1.25rem;
 	padding: 0.5rem;
-}
+}*/
 
 /* Estilos para o log de histórico */
-.card-history .history-log[b-iwwvhgqqq5] {
+/*.card-history .history-log {
 	width: 3.125rem;
 	height: 3.125rem;
 	border-radius: 0.625rem;
 	background-color: var(--cor-gray01);
 	margin-right: 1rem;
-}
+}*/
 
 /* Estilos para o conteúdo do cartão de histórico */
-.card-history-content[b-iwwvhgqqq5] {
+/*.card-history-content {
 	display: flex;
 	flex-direction: column;
 	flex: 1;
 	padding-left: 1rem;
 	padding-right: 1rem;
-}
+}*/
 
 /* Estilos para o cabeçalho do cartão de histórico */
-.card-history-head[b-iwwvhgqqq5] {
+/*.card-history-head {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	margin: 0.1875rem 0;
-}
+}*/
 
 /* Estilos para o título do histórico */
-.title[b-iwwvhgqqq5] {
+/*.title {
 	flex: 1;
-}
+}*/
 
 /* Estilos para o tempo do histórico */
-.time-history[b-iwwvhgqqq5] {
+/*.time-history {
 	color: var(--color-font);
 	font-size: 0.8125rem;
-}
+}*/
 
 /* Estilos para o texto do histórico */
-.text-history[b-iwwvhgqqq5] {
+/*.text-history {
 	font-size: 0.8125rem;
 	margin: 0.1875rem 0;
 	margin-bottom: 0.625rem;
 	text-align: left;
 	color: var(--color-font);
-}
+}*/
 
 /* Estilos para o ícone verde */
-.custom-icon-verde[b-iwwvhgqqq5] {
+/*.custom-icon-verde {
 	color: green;
-}
+}*/
 
 /* Estilos para o ícone vermelho */
-.custom-icon-vermelho[b-iwwvhgqqq5] {
+/*.custom-icon-vermelho {
 	color: red;
-}
+}*/
 /* /Components/Splash.razor.rz.scp.css */
 .splash-container[b-kaaxw7r1pj] {
     display: flex;
