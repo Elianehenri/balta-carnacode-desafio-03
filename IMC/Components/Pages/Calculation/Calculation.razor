@@ -55,9 +55,7 @@
             <button type="button" class="btn1" @onclick="HandleSubmit">
                 <span>Calcular meu IMC</span>
             </button>
-            <button type="button" class="btn2" @onclick="NavigateToHistory">
-                <span>Histórico Medidas</span>
-            </button>
+            
             <button type="button" class="btn2" @onclick="HandleEntendaClick">
                 <span>Entenda o cálculo</span>
             </button>
@@ -101,7 +99,7 @@
         // Mostrar modal com o IMC calculado
         await ShowModal("Resultado do IMC", $"Seu IMC é: {_model.ImcCalculado:F2}. Situação: {_model.Situacao.GetEnumDescription()}");
 
-        // Não navegar para o histórico aqui, aguardar o usuário fechar o modal
+       
 
         // Salvar os dados no local storage
         await BmiService.AdicionarAsync(_model);
@@ -112,7 +110,7 @@
         // Fechar o modal
         await CloseModal();
 
-        // Navegar para a página de histórico após fechar o modal
+        // Navegar para a página de imc após fechar o modal
         Navigation.NavigateTo("imc");
     }
 
@@ -127,10 +125,10 @@
         await ShowModal("Entenda o cálculo", mensagem);
     }
 
-    private void NavigateToHistory()
-    {
-        Navigation.NavigateTo("history");
-    }
+    // private void NavigateToHistory()
+    // {
+    //     Navigation.NavigateTo("history");
+    // }
 }
 
 

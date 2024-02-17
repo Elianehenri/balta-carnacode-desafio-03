@@ -33,7 +33,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-FjH1WjGfwuzm5Vt+DaQuSgM5v2\/\/X6xQk3+cMcRW3t4=",
+      "hash": "sha256-7lpiIu15518bQ2x5VqjdnmAnc1LT\/IodeawEO7uFrJE=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -41,7 +41,7 @@
       "url": "_framework\/Blazored.LocalStorage.wasm"
     },
     {
-      "hash": "sha256-1D96LZr2I0KSkug0+pw2RzUD0WtWCs1HxX5SdRuya0k=",
+      "hash": "sha256-GM9KNGWUN1hjV9utnY1n5tM\/9TVidH3F\/ognyAF6HK8=",
       "url": "_framework\/IMC.wasm"
     },
     {
@@ -49,7 +49,7 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.wasm"
     },
     {
-      "hash": "sha256-fLU84IjX0FoAx9As7IoY1YYDBljENLu0XBlZw92Lnes=",
+      "hash": "sha256-1k8W7gBHLn6fvANiKXmFRJpyMs1k+jubrQiWkQXFv8w=",
       "url": "_framework\/Microsoft.AspNetCore.Components.wasm"
     },
     {
@@ -117,7 +117,7 @@
       "url": "_framework\/System.Collections.Specialized.wasm"
     },
     {
-      "hash": "sha256-0Z\/wkwSp+4nogmGtO8egoK\/TRHPWn+fYIDm3FuP0rRc=",
+      "hash": "sha256-xRse0mr61DUEhcUJppxtlR2POXo1JvawJz5P1Lk2Fr8=",
       "url": "_framework\/System.Collections.wasm"
     },
     {
@@ -145,7 +145,7 @@
       "url": "_framework\/System.Linq.Expressions.wasm"
     },
     {
-      "hash": "sha256-5Po47pD8UQ4ExzD0zAko1EdXY1ttRUUzAtRn9YDWhOE=",
+      "hash": "sha256-adeTPqPm5WYVBt3K7ldkCvkRQCHb+yjrRLompW+\/ID8=",
       "url": "_framework\/System.Linq.wasm"
     },
     {
@@ -165,7 +165,7 @@
       "url": "_framework\/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-joU0zw8Px2RFv\/uuiRgFXhTl5r2KdNRAJMbEgdeo7Ro=",
+      "hash": "sha256-Ji9BfF0Z6jnFPafKR2hSI0U9CzZD5tA0TGBicJpga6I=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -181,7 +181,7 @@
       "url": "_framework\/System.Runtime.Serialization.Primitives.wasm"
     },
     {
-      "hash": "sha256-xeSRNeMoOVeD9o+auK8Do09XZjswoyqLQ\/3n+yXuqXY=",
+      "hash": "sha256-u5m7pCq9AO0CulkkGqG2NKVkD5PbnPukhKh83qUSMFM=",
       "url": "_framework\/System.Runtime.wasm"
     },
     {
@@ -205,7 +205,7 @@
       "url": "_framework\/System.wasm"
     },
     {
-      "hash": "sha256-rMSWSJdb5mmUCq0Te8f4vuYE2z\/RIoeKzj2ZrbcbWuM=",
+      "hash": "sha256-IzxzA6A0Hqabr8mdJXgFyb2PlWDuK0+h\/a7kG5YPfGU=",
       "url": "IMC.styles.css"
     },
     {
@@ -265,5 +265,5 @@
       "url": "manifest.webmanifest"
     }
   ],
-  "version": "h9kbioTU"
+  "version": "1z7E83w6"
 };
